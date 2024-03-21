@@ -58,7 +58,7 @@ router.post("/searchBook", async (req, res) => {
 router.post("/updateBook", async (req, res) => {
   const title = req.body.title;
   try {
-    let book = await Book.findOne(
+    let book = await Book.updateMany(
       { title: title },
       { $set: { title: "complete" } }
     );
