@@ -55,6 +55,19 @@ router.post("/searchBook", async (req, res) => {
   }
 });
 
+router.post("/searchBook", async (req, res) => {
+  const title = req.body.title;
+  try {
+    let book = await Book.findOne(
+      { title: title },
+      { $set: { title: "complete" } }
+    );
+    res.send(book);
+  } catch (error) {
+    res.status(500).send("an internal error ocurred");
+  }
+});
+
 router.delete("/deleteBook", async (req, res) => {
   const title = req.body.title;
   try {
