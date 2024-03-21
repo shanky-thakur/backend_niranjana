@@ -60,7 +60,7 @@ router.post("/updateBook", async (req, res) => {
   try {
     let book = await Book.updateMany(
       { title: title },
-      { $set: { title: "complete" } }
+      { $set: { title: "Master OOPs Java" } }
     );
     res.send(book);
   } catch (error) {
