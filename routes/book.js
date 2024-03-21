@@ -55,7 +55,7 @@ router.post("/searchBook", async (req, res) => {
   }
 });
 
-router.post("/searchBook", async (req, res) => {
+router.post("/updateBook", async (req, res) => {
   const title = req.body.title;
   try {
     let book = await Book.findOne(
